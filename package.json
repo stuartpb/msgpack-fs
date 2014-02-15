@@ -1,0 +1,31 @@
+{
+  "name": "msgpack-fs",
+  "version": "0.0.0",
+  "description": "Roll up a file or directory with MessagePack",
+  "main": "index.js",
+  "bin": "index.js",
+  "dependencies": {
+    "msgpack": "~0.2.1",
+    "obtree": "~0.1.0",
+    "minimist": "0.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stuartpb/msgpack-fs.git"
+  },
+  "keywords": [
+    "msgpack",
+    "messagepack",
+    "fs",
+    "tree"
+  ],
+  "author": "Stuart P. Bentley <stuart@testtrack4.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stuartpb/msgpack-fs/issues"
+  }
+}
