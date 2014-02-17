@@ -1,6 +1,6 @@
 {
   "name": "msgpack-fs",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Roll up a file or directory with MessagePack",
   "main": "index.js",
   "bin": "index.js",
