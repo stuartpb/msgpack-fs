@@ -4,7 +4,7 @@ Roll up a file or directory with MessagePack
 
 ## Options
 
-- `-n` : Strip whitespace.
+- `-n` : Trim whitespace on values.
 - `-p, --parents=DEPTH` : Include specified path up to directory as keys in
   message. The `-p` flag will include all specified path components, wheras
   the `--parents=DEPTH` option specifies the number of levels to keep.

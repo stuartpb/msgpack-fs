@@ -13,7 +13,7 @@ function splitPathComponents(p) {
 
 function layerWrap(obj, keys) {
   var layer;
-  for (var i = keys.length; keys; i--) {
+  for (var i = keys.length-1; i >= 0; i--) {
     layer = {};
     layer[keys[i]] = obj;
     obj = layer;
@@ -22,15 +22,16 @@ function layerWrap(obj, keys) {
 }
 
 function trimValues(obj) {
-  if (typeof obj == "object") {
+  if (Buffer.isBuffer(obj)
+    || typeof obj == "string" || obj instanceof String) {
+    return obj.toString().trim();
+  } else if (typeof obj == "object") {
     for (var key in obj) {
       if (Object.prototype.hasOwnProperty.call(obj, key)) {
         obj[key] = trimValues(obj[key]);
       }
     }
     return obj;
-  } else if (typeof obj == "string") {
-    return obj.trim();
   } else return obj;
 }
 
@@ -62,7 +63,7 @@ function outPackTree(i) {
       var layers = splitPathComponents(pathname);
       if(argv.k || typeof(argv.parents) == 'number')
         layers = layers.slice(argv.k ? -1 : -argv.parents);
-      layerWrap(tree, layers);
+      tree = layerWrap(tree, layers);
     }
     outstream.write(msgpack.pack(tree));
     return outPackTree(i + 1);
